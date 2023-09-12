@@ -20,7 +20,7 @@ pipeline {
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
 
                 // Run Maven on a Unix agent.
-                sh "mvn clean verify"
+                sh "mvn clean spring-boot:build-image"
             }
         }
     }
