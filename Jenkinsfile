@@ -9,8 +9,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            when {
-                not { changelog "[ci skip].*" }
+            steps {
+            scmSkip(skipPattern:'\\[ci skip\\].*')
             }
 
             steps {
