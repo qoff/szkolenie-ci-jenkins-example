@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('SCM Skip plugin) {
+        stage('SCM Skip plugin') {
             steps {
             scmSkip(skipPattern:'\\[ci skip\\].*')
             }
