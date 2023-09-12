@@ -9,6 +9,9 @@ pipeline {
 
     stages {
         stage('Build') {
+            when {
+                not changelog "[ci skip].*"
+            }
             steps {
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
