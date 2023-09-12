@@ -21,7 +21,7 @@ pipeline {
                 sh "mvn clean verify"
             }
         }
-    }
+
     
     post {
         // If Maven was able to run the tests, even if some of the test
