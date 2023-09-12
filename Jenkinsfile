@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    triggers { cron('H */4 * * 1-5') }
 
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
@@ -15,7 +16,6 @@ pipeline {
             }
         stage('Build') {
             steps {
-                triggers { cron('H */4 * * 1-5') }
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
 
