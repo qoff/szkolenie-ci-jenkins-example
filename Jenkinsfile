@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             when {
-                not changelog "[ci skip].*"
+                not { changelog "[ci skip].*" }
             }
 
             steps {
