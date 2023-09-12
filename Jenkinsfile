@@ -8,11 +8,12 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('SCM Skip plugin) {
             steps {
             scmSkip(skipPattern:'\\[ci skip\\].*')
             }
-
+            }
+        stage('Build') {
             steps {
                 // Get some code from a GitHub repository
                 git url: 'https://github.com/spring-projects/spring-petclinic.git', branch: 'main'
